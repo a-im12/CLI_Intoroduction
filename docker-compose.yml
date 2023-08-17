@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  rust:
+    build:
+      context: ./containers/rust
+      dockerfile: Dockerfile
+    
+    container_name: rust
+    tty: true
+
+    volumes:
+      - ./src:/root/workspace/
+
+    environment:
+      - USER=user
